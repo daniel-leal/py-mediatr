@@ -6,12 +6,14 @@ from queries.get_customers import GetCustomers
 class CreateCustomerHandler:
     def handle(self, request: CreateCustomer):
         customer = Customer(
-            request.first_name,
-            request.last_name,
-            request.tax_id,
-            request.email,
-            request.phone,
+            first_name=request.first_name,
+            last_name=request.last_name,
+            tax_id=request.tax_id,
+            email=request.email,
+            phone=request.phone,
         )
+
+        customer.save()
 
         return customer
 

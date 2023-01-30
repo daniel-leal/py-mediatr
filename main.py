@@ -16,14 +16,40 @@ if __name__ == "__main__":
     command = CreateCustomer(
         first_name="Daniel",
         last_name="Leal",
-        tax_id="91641705272",
-        email="danielleal94@gmail.com",
-        phone="91992727942",
+        tax_id="36974125846",
+        email="daniel@email.com",
+        phone="91992727481",
     )
-    result = mediator.send(command)
-    print(result.name)
+    # Handler
+    mediator.send(command)
+
+    # Command
+    command = CreateCustomer(
+        first_name="Yasmin",
+        last_name="Leal",
+        tax_id="15975324862",
+        email="yasmin@email.com",
+        phone="91992727481",
+    )
+
+    # Handler
+    mediator.send(command)
+
+    # Command
+    command = CreateCustomer(
+        first_name="André",
+        last_name="Leal",
+        tax_id="84812135482",
+        email="andre@email.com",
+        phone="91992727481",
+    )
+
+    # Handler
+    mediator.send(command)
 
     # query
     query = GetCustomers()
+
+    # Handler
     result = mediator.send(query)
     print(result)
